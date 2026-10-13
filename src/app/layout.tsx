@@ -1,12 +1,15 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Vazirmatn, Geist } from 'next/font/google';
 import './globals.css';
+import { cn } from "@/lib/utils";
 
-const inter = Inter({ subsets: ['latin'] });
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+
+const vazirmatn = Vazirmatn({ subsets: ['arabic', 'latin'] });
 
 export const metadata: Metadata = {
-  title: 'Mizito Clone',
-  description: 'Project Management App',
+  title: 'مدیریت پروژه (شبیه میزیتو)',
+  description: 'اپلیکیشن مدیریت پروژه و وظایف',
 };
 
 export default function RootLayout({
@@ -15,11 +18,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} bg-gray-50 text-gray-900`}>
+    <html lang="fa" dir="rtl" className={cn("font-sans", geist.variable)}>
+      <body className={`${vazirmatn.className} bg-gray-50 text-gray-900`}>
         <nav className="bg-blue-600 text-white p-4 shadow-md">
           <div className="container mx-auto">
-            <h1 className="text-2xl font-bold">Mizito Clone</h1>
+            <h1 className="text-2xl font-bold">مدیریت پروژه</h1>
           </div>
         </nav>
         <main className="container mx-auto p-4">

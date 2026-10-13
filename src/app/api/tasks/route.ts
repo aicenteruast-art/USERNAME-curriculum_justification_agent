@@ -10,7 +10,7 @@ export async function GET(request: Request) {
       where: projectId ? { projectId } : undefined,
     });
     return NextResponse.json(tasks);
-  } catch (error) {
+  } catch (e) {
     return NextResponse.json({ error: 'Failed to fetch tasks' }, { status: 500 });
   }
 }
@@ -27,7 +27,7 @@ export async function POST(request: Request) {
       },
     });
     return NextResponse.json(task, { status: 201 });
-  } catch (error) {
+  } catch (e) {
     return NextResponse.json({ error: 'Failed to create task' }, { status: 500 });
   }
 }

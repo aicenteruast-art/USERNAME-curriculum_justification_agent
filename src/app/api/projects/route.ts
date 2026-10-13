@@ -9,7 +9,7 @@ export async function GET() {
       },
     });
     return NextResponse.json(projects);
-  } catch (error) {
+  } catch (e) {
     return NextResponse.json({ error: 'Failed to fetch projects' }, { status: 500 });
   }
 }
@@ -24,7 +24,7 @@ export async function POST(request: Request) {
       },
     });
     return NextResponse.json(project, { status: 201 });
-  } catch (error) {
+  } catch (e) {
     return NextResponse.json({ error: 'Failed to create project' }, { status: 500 });
   }
 }
