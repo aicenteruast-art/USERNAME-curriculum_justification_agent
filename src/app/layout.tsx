@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
-import { Vazirmatn } from 'next/font/google';
+import { Vazirmatn, Geist } from 'next/font/google';
 import './globals.css';
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const vazirmatn = Vazirmatn({ subsets: ['arabic', 'latin'] });
 
@@ -15,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fa" dir="rtl">
+    <html lang="fa" dir="rtl" className={cn("font-sans", geist.variable)}>
       <body className={`${vazirmatn.className} bg-gray-50 text-gray-900`}>
         <nav className="bg-blue-600 text-white p-4 shadow-md">
           <div className="container mx-auto">
